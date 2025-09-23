@@ -1,121 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng Dẫn Đăng Ký Tài Khoản</title>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            margin: 0;
-            overflow: hidden;
-        }
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            display: inline-block;
-            max-width: 500px;
-            color: #333;
-            position: relative;
-            z-index: 1;
-        }
-        h2 {
-            color: #6a11cb;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        ol {
-            text-align: left;
-            margin: 0 auto;
-            display: inline-block;
-            padding-left: 20px;
-            font-size: 16px;
-        }
-        .note {
-            font-weight: bold;
-            color: #d9534f;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #6a11cb;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #4e0ea8;
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thông tin thanh toán</title>
+  <style>
+    body {
+      margin:0;
+      font-family:'Segoe UI',Arial,sans-serif;
+      background:linear-gradient(135deg,#4facfe,#00f2fe);
+      color:#333;
+      padding:40px;
+      text-align:center;
+    }
+    .card {
+      max-width:760px;
+      margin:0 auto;
+      background:#fff;
+      padding:40px 30px;
+      border-radius:24px;
+      box-shadow:0 12px 32px rgba(0,0,0,0.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .avatar-wrapper {
+      width:180px;
+      height:180px;
+      margin:0 auto 20px;
+      border-radius:50%;
+      border:6px solid #fff;
+      box-shadow:0 0 25px rgba(79,172,254,0.9);
+      overflow:hidden;
+      position:relative;
+    }
+    .avatar-wrapper img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    h1 {
+      margin:0 0 8px;
+      font-size:30px;
+      color:#222;
+    }
+    p.lead {
+      margin:0 0 24px;
+      color:#444;
+      font-size:17px;
+    }
+    .accounts {
+      margin-top:22px;
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .acct {
+      flex:1 1 320px;
+      background:#f9fbff;
+      padding:24px;
+      border-radius:18px;
+      border:1px solid #dde7f0;
+      text-align:center;
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .acct:hover {
+      transform:translateY(-8px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.15);
+    }
+    .acct h3 {
+      margin:0 0 10px;
+      font-size:20px;
+      color:#0052a3;
+    }
+    .acct .line {
+      font-weight:700;
+      color:#111;
+      margin-bottom:10px;
+      font-size:17px;
+    }
+    .qr {
+      display:block;
+      margin:14px auto;
+      width:190px;
+      height:190px;
+      border-radius:16px;
+      border:2px solid #ddd;
+      background:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn {
+      display:inline-block;
+      padding:11px 18px;
+      border-radius:10px;
+      background:linear-gradient(90deg,#4facfe,#00f2fe);
+      color:#fff;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+      margin-top:12px;
+      transition:transform 0.2s, opacity 0.3s;
+    }
+    .btn:hover { opacity:0.9; transform:scale(1.05); }
+    .small { font-size:13px; color:#555; margin-top:12px; }
+    footer { margin-top:32px; font-size:13px; color:#fff; opacity:0.85; }
+    @media(max-width:760px){ .accounts{flex-direction:column;align-items:center} .acct{width:100%} }
+  </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="container">
-        <h2>Hướng Dẫn Đăng Ký Nhận Thẻ Cào </h2>
-        <p>Chào mừng bạn! Để đăng ký tài khoản, hãy làm theo các bước sau:</p>
-        <ol>
-            <li>Nhấn vào nút bên dưới để truy cập trang đăng ký.</li>
-            <li>Điền đầy đủ thông tin cần thiết.</li>
-            <li>Bỏ số 0 đầu tiên trong số điện thoại của bạn.</li>
-            <li>Nhấn "Đăng ký" để hoàn tất ✅.</li>
-            <li>Chọn hệ điều hành bạn đang dùng để tải ứng dụng về máy.</li>
-            <li>Sau khi tải xong, đăng nhập vào ứng dụng để sử dụng.</li>
-        </ol>
-        <p class="note">Lưu ý: Hãy đọc kỹ hướng dẫn trước khi thực hiện!</p>
-        
-        <a href="https://share.globalmall.vn/mobile/register/index/inviter/102345" class="btn" target="_blank">Đăng Ký Ngay</a>
+  <div class="card">
+    <div class="avatar-wrapper">
+      <img src="c15112ad-20ff-4e8a-b776-477fd862128e.png" alt="Ảnh cá nhân">
     </div>
-    
+    <h1>Nguyễn Khánh Hưng</h1>
+    <p class="lead">Thông tin thanh toán — MB Bank &amp; Viettel Money</p>
+
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffffff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.6, "random": true },
-                "size": { "value": 4, "random": true },
-                "line_linked": { "enable": false },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "bubble" },
-                    "resize": true
-                },
-                "modes": {
-                    "bubble": { "distance": 250, "size": 10, "duration": 2, "opacity": 8, "speed": 3 },
-                    "repulse": { "distance": 150, "duration": 0.4 },
-                    "push": { "particles_nb": 4 },
-                    "remove": { "particles_nb": 2 }
-                }
-            },
-            "retina_detect": true
-        });
+      const ACCOUNT_CONFIG = {
+        holder: 'Tên Bạn',
+        mb: { bank: 'MB Bank', account: '123456789', note: 'Chi nhánh / Ghi chú (nếu có)' },
+        vt: { name: 'Viettel Money', phone: '0987654321', note: '' }
+      };
     </script>
+
+    <div class="accounts">
+      <div class="acct" id="mbCard">
+        <h3>MB Bank</h3>
+        <div class="line" id="mbAccount">123456789</div>
+        <div class="small">Chủ tài khoản: <span id="mbHolder">Tên Bạn</span></div>
+        <img id="mbQr" class="qr" src="" alt="QR MB">
+        <button class="btn" onclick="copyText('mb')">Sao chép STK</button>
+      </div>
+
+      <div class="acct" id="vtCard">
+        <h3>Viettel Money</h3>
+        <div class="line" id="vtAccount">0987654321</div>
+        <div class="small">Chủ tài khoản: <span id="vtHolder">Tên Bạn</span></div>
+        <img id="vtQr" class="qr" src="" alt="QR Viettel Money">
+        <button class="btn" onclick="copyText('vt')">Sao chép SĐT</button>
+      </div>
+    </div>
+
+    <div class="small">Quét mã QR để thanh toán nhanh. Thay số tài khoản/ảnh bằng thông tin thật trong phần cấu hình mã nguồn.</div>
+  </div>
+
+  <footer>© 2025 Trang thông tin thanh toán</footer>
+
+  <script>
+    document.getElementById('mbAccount').textContent = ACCOUNT_CONFIG.mb.account;
+    document.getElementById('mbHolder').textContent = ACCOUNT_CONFIG.holder;
+    document.getElementById('vtAccount').textContent = ACCOUNT_CONFIG.vt.phone;
+    document.getElementById('vtHolder').textContent = ACCOUNT_CONFIG.holder;
+
+    function qrUrl(text,size=400){
+      return 'https://chart.googleapis.com/chart?cht=qr&chs='+size+'x'+size+'&chl='+encodeURIComponent(text);
+    }
+
+    const mbText = `MB Bank\nTK: ${ACCOUNT_CONFIG.mb.account}\nChủ TK: ${ACCOUNT_CONFIG.holder} ${ACCOUNT_CONFIG.mb.note?("\\n"+ACCOUNT_CONFIG.mb.note):''}`;
+    const vtText = `Viettel Money\nSDT: ${ACCOUNT_CONFIG.vt.phone}\nChủ: ${ACCOUNT_CONFIG.holder}`;
+
+    document.getElementById('mbQr').src = qrUrl(mbText,300);
+    document.getElementById('vtQr').src = qrUrl(vtText,300);
+
+    function copyText(which){
+      let text = '';
+      if(which === 'mb') text = ACCOUNT_CONFIG.mb.account;
+      if(which === 'vt') text = ACCOUNT_CONFIG.vt.phone;
+      navigator.clipboard.writeText(text).then(()=>{ alert('Đã sao chép: ' + text); }).catch(()=>{ prompt('Sao chép thủ công:', text); });
+    }
+  </script>
 </body>
 </html>
