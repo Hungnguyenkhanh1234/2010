@@ -1,174 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thông tin thanh toán</title>
-  <style>
-    body {
-      margin:0;
-      font-family:'Segoe UI',Arial,sans-serif;
-      background:linear-gradient(135deg,#4facfe,#00f2fe);
-      color:#333;
-      padding:40px;
-      text-align:center;
-    }
-    .card {
-      max-width:760px;
-      margin:0 auto;
-      background:#fff;
-      padding:40px 30px;
-      border-radius:24px;
-      box-shadow:0 12px 32px rgba(0,0,0,0.18);
-      position:relative;
-      overflow:hidden;
-    }
-    .avatar-wrapper {
-      width:180px;
-      height:180px;
-      margin:0 auto 20px;
-      border-radius:50%;
-      border:6px solid #fff;
-      box-shadow:0 0 25px rgba(79,172,254,0.9);
-      overflow:hidden;
-      position:relative;
-    }
-    .avatar-wrapper img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    h1 {
-      margin:0 0 8px;
-      font-size:30px;
-      color:#222;
-    }
-    p.lead {
-      margin:0 0 24px;
-      color:#444;
-      font-size:17px;
-    }
-    .accounts {
-      margin-top:22px;
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .acct {
-      flex:1 1 320px;
-      background:#f9fbff;
-      padding:24px;
-      border-radius:18px;
-      border:1px solid #dde7f0;
-      text-align:center;
-      transition:transform 0.3s, box-shadow 0.3s;
-    }
-    .acct:hover {
-      transform:translateY(-8px);
-      box-shadow:0 8px 24px rgba(0,0,0,0.15);
-    }
-    .acct h3 {
-      margin:0 0 10px;
-      font-size:20px;
-      color:#0052a3;
-    }
-    .acct .line {
-      font-weight:700;
-      color:#111;
-      margin-bottom:10px;
-      font-size:17px;
-    }
-    .qr {
-      display:block;
-      margin:14px auto;
-      width:190px;
-      height:190px;
-      border-radius:16px;
-      border:2px solid #ddd;
-      background:#fff;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    }
-    .btn {
-      display:inline-block;
-      padding:11px 18px;
-      border-radius:10px;
-      background:linear-gradient(90deg,#4facfe,#00f2fe);
-      color:#fff;
-      font-weight:600;
-      border:none;
-      cursor:pointer;
-      margin-top:12px;
-      transition:transform 0.2s, opacity 0.3s;
-    }
-    .btn:hover { opacity:0.9; transform:scale(1.05); }
-    .small { font-size:13px; color:#555; margin-top:12px; }
-    footer { margin-top:32px; font-size:13px; color:#fff; opacity:0.85; }
-    @media(max-width:760px){ .accounts{flex-direction:column;align-items:center} .acct{width:100%} }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Chúc Mừng 20/10 💐</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    text-align: center;
+    transition: background 2s ease;
+  }
+
+  #container {
+    text-align: center;
+  }
+
+  button {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 1);
+  }
+
+  h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #ff66b2, #ff1493, #ff66b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s infinite alternate;
+    margin-bottom: 10px;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff69b4; }
+    to { text-shadow: 0 0 25px #ff1493; }
+  }
+
+  p {
+    color: white;
+    font-size: 1.3rem;
+    text-shadow: 0 0 8px #ff69b4;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .fade-in {
+    animation: fadeInScale 1.5s ease forwards;
+  }
+
+  @keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .flower, .heart {
+    position: absolute;
+    top: -50px;
+    animation: fall 6s linear infinite;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  audio {
+    display: none;
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <div class="avatar-wrapper">
-      <img src="c15112ad-20ff-4e8a-b776-477fd862128e.png" alt="Ảnh cá nhân">
+
+  <div id="container">
+    <button id="startBtn">💌 Nhấn để nhận lời chúc 💖</button>
+
+    <div id="message" class="hidden">
+      <h1>💐 Chúc Mừng Ngày 20/10 💖</h1>
+      <p>Chúc bạn luôn xinh đẹp, hạnh phúc và được yêu thương như những đóa hoa 🌸  
+      Cảm ơn vì đã luôn tỏa sáng, dịu dàng và tuyệt vời như thế 💕</p>
     </div>
-    <h1>Nguyễn Khánh Hưng</h1>
-    <p class="lead">Thông tin thanh toán — MB Bank &amp; Viettel Money</p>
-
-    <script>
-      const ACCOUNT_CONFIG = {
-        holder: 'Tên Bạn',
-        mb: { bank: 'MB Bank', account: '123456789', note: 'Chi nhánh / Ghi chú (nếu có)' },
-        vt: { name: 'Viettel Money', phone: '0987654321', note: '' }
-      };
-    </script>
-
-    <div class="accounts">
-      <div class="acct" id="mbCard">
-        <h3>MB Bank</h3>
-        <div class="line" id="mbAccount">123456789</div>
-        <div class="small">Chủ tài khoản: <span id="mbHolder">Tên Bạn</span></div>
-        <img id="mbQr" class="qr" src="" alt="QR MB">
-        <button class="btn" onclick="copyText('mb')">Sao chép STK</button>
-      </div>
-
-      <div class="acct" id="vtCard">
-        <h3>Viettel Money</h3>
-        <div class="line" id="vtAccount">0987654321</div>
-        <div class="small">Chủ tài khoản: <span id="vtHolder">Tên Bạn</span></div>
-        <img id="vtQr" class="qr" src="" alt="QR Viettel Money">
-        <button class="btn" onclick="copyText('vt')">Sao chép SĐT</button>
-      </div>
-    </div>
-
-    <div class="small">Quét mã QR để thanh toán nhanh. Thay số tài khoản/ảnh bằng thông tin thật trong phần cấu hình mã nguồn.</div>
   </div>
 
-  <footer>© 2025 Trang thông tin thanh toán</footer>
+  <audio id="bgm" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/05/15/audio_25ccdb12b3.mp3?filename=romantic-piano-146999.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Thư viện pháo giấy -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
-    document.getElementById('mbAccount').textContent = ACCOUNT_CONFIG.mb.account;
-    document.getElementById('mbHolder').textContent = ACCOUNT_CONFIG.holder;
-    document.getElementById('vtAccount').textContent = ACCOUNT_CONFIG.vt.phone;
-    document.getElementById('vtHolder').textContent = ACCOUNT_CONFIG.holder;
+    const flowers = ['🌸','🌷','🌹','💐','🌺','🌼'];
+    const hearts = ['💖','💗','💓','💞','💕'];
+    const btn = document.getElementById('startBtn');
+    const msg = document.getElementById('message');
+    const bgm = document.getElementById('bgm');
 
-    function qrUrl(text,size=400){
-      return 'https://chart.googleapis.com/chart?cht=qr&chs='+size+'x'+size+'&chl='+encodeURIComponent(text);
+    function createFallingEmoji(list, className) {
+      const emoji = document.createElement('div');
+      emoji.classList.add(className);
+      emoji.textContent = list[Math.floor(Math.random() * list.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (4 + Math.random() * 6) + 's';
+      emoji.style.fontSize = (1 + Math.random() * 1.8) + 'rem';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 10000);
     }
 
-    const mbText = `MB Bank\nTK: ${ACCOUNT_CONFIG.mb.account}\nChủ TK: ${ACCOUNT_CONFIG.holder} ${ACCOUNT_CONFIG.mb.note?("\\n"+ACCOUNT_CONFIG.mb.note):''}`;
-    const vtText = `Viettel Money\nSDT: ${ACCOUNT_CONFIG.vt.phone}\nChủ: ${ACCOUNT_CONFIG.holder}`;
+    function fireConfetti() {
+      const duration = 2000;
+      const end = Date.now() + duration;
 
-    document.getElementById('mbQr').src = qrUrl(mbText,300);
-    document.getElementById('vtQr').src = qrUrl(vtText,300);
-
-    function copyText(which){
-      let text = '';
-      if(which === 'mb') text = ACCOUNT_CONFIG.mb.account;
-      if(which === 'vt') text = ACCOUNT_CONFIG.vt.phone;
-      navigator.clipboard.writeText(text).then(()=>{ alert('Đã sao chép: ' + text); }).catch(()=>{ prompt('Sao chép thủ công:', text); });
+      (function frame() {
+        confetti({
+          particleCount: 10,
+          angle: 60,
+          spread: 70,
+          origin: { x: 0 },
+          colors: ['#ff69b4', '#ffb6c1', '#ffc0cb']
+        });
+        confetti({
+          particleCount: 10,
+          angle: 120,
+          spread: 70,
+          origin: { x: 1 },
+          colors: ['#ff69b4', '#ffb6c1', '#ffc0cb']
+        });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
     }
+
+    btn.addEventListener('click', () => {
+      btn.classList.add('hidden');
+      bgm.play();
+      fireConfetti();
+
+      setTimeout(() => {
+        msg.classList.remove('hidden');
+        msg.classList.add('fade-in');
+        document.body.style.background = 'linear-gradient(135deg, #ffb6c1, #ffa6d1, #ff8fc7)';
+
+        // hoa rơi
+        setInterval(() => createFallingEmoji(flowers, 'flower'), 400);
+
+        // tim bay
+        setTimeout(() => {
+          for (let i = 0; i < 30; i++) {
+            setTimeout(() => createFallingEmoji(hearts, 'heart'), i * 150);
+          }
+        }, 1000);
+      }, 2000);
+    });
   </script>
+
 </body>
 </html>
